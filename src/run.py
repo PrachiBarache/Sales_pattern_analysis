@@ -5,7 +5,7 @@ from datacleaning import data_load_to_clean
 from featureengineering import compute_rfm
 from anlysisbasket import prepare_basket, generate_rules
 
-RAW_PATH = Path("data/online_retail.csv")
+RAW_PATH = Path("/data/online_retail.csv")
 PROCESSED_DIR = Path("data/processed")
 
 def main():
