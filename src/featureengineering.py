@@ -13,8 +13,8 @@ def compute_rfm(df: pd.DataFrame) -> pd.DataFrame:
         )
         .reset_index()
     )
-
     return rfm
+
 
 
 def assign_rfm_scores(rfm: pd.DataFrame) -> pd.DataFrame:
