@@ -9,11 +9,17 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 RAW_PATH = PROJECT_ROOT / "data" / "online_retail.csv"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+# Project root = parent of src/
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+RAW_PATH = PROJECT_ROOT / "data" / "online_retail.csv"
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 
 def main():
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
     df = load_and_clean_data(RAW_PATH)
+    df = data_load_to_clean(RAW_PATH)
     df.to_csv(PROCESSED_DIR / "clean_transactions.csv", index=False)
 
     rfm = compute_rfm(df)
